@@ -40,6 +40,9 @@ async def start_command(message: types.Message):
     conn.close()
     keyboard = types.InlineKeyboardMarkup()
 
+    schedule_button = types.InlineKeyboardButton(text="Schedule",
+                                                 web_app=WebAppInfo(
+                                                     url="https://www.geckoterminal.com/ton/pools/EQAgaBWJ3U_nYG2trnUFlZPUxWZYeDIGpUAIFDKVsVvTcqTm"))
     mr_proton_button = types.InlineKeyboardButton(text="MR PROTON", url="https://t.me/mrprotonshow")
     proton_chat_button = types.InlineKeyboardButton(text="PRO:CHAT", url="https://t.me/tonprochat")
     proton_site_button = types.InlineKeyboardButton(text="Site", web_app=WebAppInfo(url="https://protonjetton.com/"))
@@ -47,6 +50,7 @@ async def start_command(message: types.Message):
     purchase_exchange_button = types.InlineKeyboardButton(text="Purchase and exchange",
                                                           callback_data="purchase_exchange")
 
+    keyboard.add(schedule_button)
     keyboard.add(mr_proton_button, proton_chat_button)
     keyboard.add(proton_site_button, proton_x_button)
     keyboard.add(purchase_exchange_button)
